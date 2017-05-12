@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Concorrer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="regiaoCritica" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConcorrerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConcorrerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VisualizarArquivo">
+        <s:complexType />
+      </s:element>
+      <s:element name="VisualizarArquivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VisualizarArquivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SalvarArquivo">
+        <s:complexType />
+      </s:element>
+      <s:element name="SalvarArquivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalvarArquivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditarArquivo">
+        <s:complexType />
+      </s:element>
+      <s:element name="EditarArquivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EditarArquivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConcorrerSoapIn">
+    <wsdl:part name="parameters" element="tns:Concorrer" />
+  </wsdl:message>
+  <wsdl:message name="ConcorrerSoapOut">
+    <wsdl:part name="parameters" element="tns:ConcorrerResponse" />
+  </wsdl:message>
+  <wsdl:message name="VisualizarArquivoSoapIn">
+    <wsdl:part name="parameters" element="tns:VisualizarArquivo" />
+  </wsdl:message>
+  <wsdl:message name="VisualizarArquivoSoapOut">
+    <wsdl:part name="parameters" element="tns:VisualizarArquivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalvarArquivoSoapIn">
+    <wsdl:part name="parameters" element="tns:SalvarArquivo" />
+  </wsdl:message>
+  <wsdl:message name="SalvarArquivoSoapOut">
+    <wsdl:part name="parameters" element="tns:SalvarArquivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditarArquivoSoapIn">
+    <wsdl:part name="parameters" element="tns:EditarArquivo" />
+  </wsdl:message>
+  <wsdl:message name="EditarArquivoSoapOut">
+    <wsdl:part name="parameters" element="tns:EditarArquivoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebApiRecurso3Soap">
+    <wsdl:operation name="Concorrer">
+      <wsdl:input message="tns:ConcorrerSoapIn" />
+      <wsdl:output message="tns:ConcorrerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VisualizarArquivo">
+      <wsdl:input message="tns:VisualizarArquivoSoapIn" />
+      <wsdl:output message="tns:VisualizarArquivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SalvarArquivo">
+      <wsdl:input message="tns:SalvarArquivoSoapIn" />
+      <wsdl:output message="tns:SalvarArquivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarArquivo">
+      <wsdl:input message="tns:EditarArquivoSoapIn" />
+      <wsdl:output message="tns:EditarArquivoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebApiRecurso3Soap" type="tns:WebApiRecurso3Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Concorrer">
+      <soap:operation soapAction="http://tempuri.org/Concorrer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VisualizarArquivo">
+      <soap:operation soapAction="http://tempuri.org/VisualizarArquivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarArquivo">
+      <soap:operation soapAction="http://tempuri.org/SalvarArquivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarArquivo">
+      <soap:operation soapAction="http://tempuri.org/EditarArquivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebApiRecurso3Soap12" type="tns:WebApiRecurso3Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Concorrer">
+      <soap12:operation soapAction="http://tempuri.org/Concorrer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VisualizarArquivo">
+      <soap12:operation soapAction="http://tempuri.org/VisualizarArquivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SalvarArquivo">
+      <soap12:operation soapAction="http://tempuri.org/SalvarArquivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarArquivo">
+      <soap12:operation soapAction="http://tempuri.org/EditarArquivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebApiRecurso3">
+    <wsdl:port name="WebApiRecurso3Soap" binding="tns:WebApiRecurso3Soap">
+      <soap:address location="http://localhost:18622/WebApiRecurso3.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebApiRecurso3Soap12" binding="tns:WebApiRecurso3Soap12">
+      <soap12:address location="http://localhost:18622/WebApiRecurso3.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
